@@ -1,0 +1,43 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.25f1
+CRC: 998647359
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 41004a12e064681743c6b3a46636eb22
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: a1b87feebbcc5f33371420b8a64b484c
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: e2003a31e030873ab39a26670fb6318c
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 210
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Aisha Alotbi/Foreground.prefab
+Dependencies: []
