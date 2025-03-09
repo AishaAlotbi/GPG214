@@ -8,7 +8,7 @@ namespace Gamekit2D
         public Damageable representedDamageable;
         public GameObject healthIconPrefab;
 
-        protected Animator[] m_HealthIconAnimators;
+        public Animator[] m_HealthIconAnimators;
 
         protected readonly int m_HashActivePara = Animator.StringToHash ("Active");
         protected readonly int m_HashInactiveState = Animator.StringToHash ("Inactive");

@@ -9,7 +9,6 @@ namespace AishaAlotbi
     public class PlayerData
     {
         public int currentHealth;
-        public string lastCheckpoint;
         public string[] playerInventory;
         public Vector2 playerPosition;
 

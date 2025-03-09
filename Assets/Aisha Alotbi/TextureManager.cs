@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Globalization;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -9,37 +11,65 @@ namespace AishaAlotbi
     public class TextureManager : MonoBehaviour
     {
 
-        public string textureFileName;
+        public string shipSpriteFileName = "newShipSprite.png";
         public string streamingAssetsFolderPath = Application.streamingAssetsPath;
+        private SpriteRenderer shipSpriteRenderer;
+        public GameObject foreground;
+        
 
-        IEnumerator Start()
+
+        private void Start()
         {
-            yield return StartCoroutine(LoadNewTexture());
+           
+            shipSpriteRenderer = foreground.transform.Find("Dropship").GetComponent<SpriteRenderer>(); 
+
+
+            LoadAndChangeSprite(shipSpriteFileName);
         }
 
-        IEnumerator LoadNewTexture()
+        private void LoadAndChangeSprite(string fileName)
         {
-            string textureFilePath = Path.Combine(streamingAssetsFolderPath, textureFileName);
-            UnityWebRequest imageRequest = UnityWebRequestTexture.GetTexture("file://" + textureFilePath);
+            string filePath = Path.Combine(streamingAssetsFolderPath, fileName);
+            Debug.Log("Sprite file path: " + filePath);
 
-            yield return imageRequest.SendWebRequest();
-
-            if (imageRequest.result != UnityWebRequest.Result.Success)
+            if (File.Exists(filePath)) 
             {
-                Debug.LogError("Failed to load texture: " + imageRequest.error);
+                shipSpriteRenderer = foreground.transform.Find("Dropship").GetComponent<SpriteRenderer>();
+                StartCoroutine(LoadSprite(filePath));
+            }
+            else { Debug.Log("Sprite file not found");}
+        }
+
+        IEnumerator LoadSprite(string filePath)
+        {
+            UnityWebRequest textureRequest = UnityWebRequestTexture.GetTexture("file://" + filePath);
+            AsyncOperation downloadOperation = textureRequest.SendWebRequest();
+
+            while (!downloadOperation.isDone)
+            {
+                Debug.Log("Download Progress " + ((downloadOperation.progress / 1f) * 100) + "%");
+                yield return null;
+            }
+
+            if (textureRequest.result == UnityWebRequest.Result.ConnectionError || textureRequest.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("Error when downloading file");
                 yield break;
             }
 
+            Texture2D texture = DownloadHandlerTexture.GetContent(textureRequest);
+            Sprite newSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
 
+            if (shipSpriteRenderer != null)
+            {
 
-            Texture2D newTexture = DownloadHandlerTexture.GetContent(imageRequest);
-            SpriteRenderer spriteImage = GetComponent<SpriteRenderer>();
+                shipSpriteRenderer.sprite = newSprite;
+               
+            }
 
-            Sprite newSprite = Sprite.Create(newTexture, new Rect(0, 0, newTexture.width, newTexture.height), transform.position);
-            spriteImage.sprite = newSprite;
+           
 
-            imageRequest.Dispose();
-            yield return null;
         }
-    }
+    }   
+
 }

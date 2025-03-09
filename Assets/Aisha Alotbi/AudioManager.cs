@@ -11,40 +11,43 @@ namespace AishaAlotbi
     public class AudioManager : MonoBehaviour
     {
         public string musicFileName = "newMusic.mp3";
-        public string ambientFileName = "newAmbient.mp3";
         public string streamingAssetsFolderPath = Application.streamingAssetsPath;
         private BackgroundMusicPlayer backgroundMusicPlayer;
 
-        private void Start()
-        {
-            Debug.Log("AudioManager Start called");
+       void Start()
+       {
+            
             backgroundMusicPlayer = BackgroundMusicPlayer.Instance;
-            LoadAndChangeMusic(musicFileName, true);
-            LoadAndChangeMusic(ambientFileName, false);
+            LoadAndChangeMusic(musicFileName);
+            
 
+       }
 
-        }
+       
 
-        
-
-        private void LoadAndChangeMusic(string fileName, bool isMusic)
+        private void LoadAndChangeMusic(string fileName)
         {
             string filePath = Path.Combine(streamingAssetsFolderPath,fileName);
             Debug.Log("File Path: " + filePath);
 
-            
-            
-                StartCoroutine(LoadAudioClip(filePath, isMusic));
+            if (File.Exists(filePath))
+            {
+
+                StartCoroutine(LoadAudioClip(filePath));
+            }
+            else
+            {
+                Debug.LogError("File not found at path: " + filePath);
+            }
            
-                //Debug.LogError("File not found at path: " + filePath);
-            
-            
-            
+                
+ 
         }
 
-        IEnumerator LoadAudioClip(string fileName, bool isMusic)
+        IEnumerator LoadAudioClip(string fileName)
         {
-            UnityWebRequest audioRequest = UnityWebRequestMultimedia.GetAudioClip("file://" + streamingAssetsFolderPath + "/" + fileName, AudioType.UNKNOWN);
+            string filePath = Path.Combine(streamingAssetsFolderPath, fileName);
+            UnityWebRequest audioRequest = UnityWebRequestMultimedia.GetAudioClip("file://" + filePath, AudioType.UNKNOWN);
             AsyncOperation downloadOperation = audioRequest.SendWebRequest();
 
             while (!downloadOperation.isDone)
@@ -53,30 +56,27 @@ namespace AishaAlotbi
                 yield return null;
             }
 
-            if(audioRequest.result == UnityWebRequest.Result.ConnectionError || audioRequest.result == UnityWebRequest.Result.ProtocolError)
+            if (audioRequest.result == UnityWebRequest.Result.ConnectionError || audioRequest.result == UnityWebRequest.Result.ProtocolError)
             {
                 Debug.LogError("Error when downloading file");
                 yield break;
             }
+            
+            AudioClip newClip = DownloadHandlerAudioClip.GetContent(audioRequest);
+            backgroundMusicPlayer.PushClip(newClip);
 
-            if(audioRequest.result == UnityWebRequest.Result.Success)
-            {
-                AudioClip newClip = DownloadHandlerAudioClip.GetContent(audioRequest);
 
-                if (isMusic)
-                {
-                    backgroundMusicPlayer.ChangeMusic(newClip);
-                    
-                }
-                else
-                {
-                    backgroundMusicPlayer.ChangeAmbient(newClip);
-                }
-            }
-            else
-            {
-                Debug.LogError("Failed to load audio clip: " + audioRequest.error);
-            }
+
+
+
+
+
+
+
+
+
+
+
         }
 
     }

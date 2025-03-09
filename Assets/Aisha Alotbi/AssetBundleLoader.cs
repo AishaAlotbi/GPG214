@@ -9,37 +9,17 @@ public class AssetBundleLoader : MonoBehaviour
     
     
     private AssetBundle backgrounds;
-    Vector3 foregroundPosition = new Vector3(22.05f, 0, 0);
+    
     Vector3 backgroundPosition = new Vector3(22.05f, 0, 0);
 
 
     void Start()
     {
         LoadAssetBundles();
-        LoadForeground();
         LoadBackground();
 
     }
 
-  
-    void LoadForeground()
-    {
-        if(backgrounds == null)
-        {
-            Debug.Log("Foreground Bundle Not Found");
-            return;
-        }
-
-       GameObject foregroundPrefab = backgrounds.LoadAsset<GameObject>("Foreground");
-
-        if(foregroundPrefab != null)
-        {
-            Instantiate(foregroundPrefab, foregroundPosition, Quaternion.identity);
-            
-        }
-
-       
-    }
 
     void LoadBackground()
     {
@@ -53,13 +33,10 @@ public class AssetBundleLoader : MonoBehaviour
 
         if (backgroundPrefab != null)
         {
-            Instantiate(backgroundPrefab, foregroundPosition, Quaternion.identity);
+            Instantiate(backgroundPrefab, backgroundPosition, Quaternion.identity);
             
         }
     }
-
-
-
 
 
     void LoadAssetBundles()
