@@ -1,13 +1,5 @@
 fileFormatVersion: 2
 guid: c80ed5f8eaafafb47ba2d3c62c3238a7
-timeCreated: 1501771784
-licenseType: Store
-ShaderImporter:
-  externalObjects: {}
-  defaultTextures: []
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 107098
@@ -15,3 +7,10 @@ AssetOrigin:
   packageVersion: 3.0
   assetPath: Assets/2DGamekit/Utilities/Shaders/Water.shader
   uploadId: 680389
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: backgrounds
+  assetBundleVariant: 

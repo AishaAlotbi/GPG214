@@ -1,0 +1,190 @@
+ManifestFileVersion: 0
+UnityVersion: 6000.0.25f1
+CRC: 992724519
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 40ab50c451a8991d090b459fa5981b55
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: a1b87feebbcc5f33371420b8a64b484c
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 9bbcd190ed06608ed8dcbd9cff37b14e
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 210
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/2DGamekit/Art/Materials/Interactables/RockChunks.mat
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/WaterNewHeight.png
+- Assets/2DGamekit/Utilities/Shaders/Water.shader
+- Assets/2DGamekit/Art/Sprites/Environment/LowerPlants1.png
+- Assets/2DGamekit/Art/Sprites/Environment/WallTile.png
+- Assets/2DGamekit/Art/Sprites/Environment/Rubble.png
+- Assets/Aisha Alotbi/Background.prefab
+- Assets/2DGamekit/Art/Sprites/Interactables/DestructibleColumn.png
+- Assets/2DGamekit/Utilities/Shaders/Mist.mat
+- Assets/2DGamekit/Art/Materials/Interactables/RockDust02.mat
+- Assets/Aisha Alotbi/Foreground.prefab
+- Assets/2DGamekit/Art/Sprites/Environment/WallTile02.png
+- Assets/2DGamekit/Art/Sprites/Environment/PlantsNormal.png
+- Assets/2DGamekit/Utilities/Shaders/NormalMappedSprite-Animated.shader
+- Assets/2DGamekit/Art/Sprites/Environment/AlienSculpture02.png
+- Assets/2DGamekit/Art/Materials/Environment/PlantSwayBG.mat
+- Assets/2DGamekit/Art/Sprites/Environment/Dropship.png
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/Water 1.png
+- Assets/2DGamekit/Art/Sprites/Interactables/InfoSign.png
+- Assets/2DGamekit/Art/Sprites/Interactables/HubDoor2.png
+- Assets/2DGamekit/Art/Sprites/Environment/AlienBlock01.png
+- Assets/2DGamekit/Art/Sprites/Environment/BGRock03.png
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/SplashDrops.png
+- Assets/2DGamekit/Art/Sprites/Environment/AproachingWallPattern.png
+- Assets/2DGamekit/Art/Sprites/Environment/DistantMount(tilable).png
+- Assets/2DGamekit/Art/Sprites/Environment/AlienStatue05.png
+- Assets/2DGamekit/Art/Materials/Environment/LitWobble.mat
+- Assets/2DGamekit/Art/Materials/Environment/TilemapRock.mat
+- Assets/2DGamekit/Utilities/Shaders/NormalMappedTile.shader
+- Assets/2DGamekit/Art/Sprites/Environment/Alcove.png
+- Assets/2DGamekit/Art/Materials/Interactables/Spikes.mat
+- Assets/2DGamekit/Art/Sprites/Interactables/SpikesEmissive.png
+- Assets/2DGamekit/Art/Materials/Environment/LitTileRock.mat
+- Assets/2DGamekit/Art/Sprites/Interactables/Door.png
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/LightShaft.png
+- Assets/2DGamekit/Art/Sprites/Interactables/HubDoorNormal.png
+- Assets/2DGamekit/Art/Sprites/Interactables/StomperDoorOn.png
+- Assets/2DGamekit/Art/Materials/Environment/LitBasicWaterBlocker.mat
+- Assets/2DGamekit/Art/Sprites/Environment/AlienBlock04.png
+- Assets/2DGamekit/Art/Sprites/Environment/StonesNormal.png
+- Assets/2DGamekit/Art/Materials/Environment/Background.mat
+- Assets/2DGamekit/Art/Sprites/Environment/BGRock01.png
+- Assets/2DGamekit/Art/Sprites/Environment/AlienStatue02.png
+- Assets/2DGamekit/Art/Sprites/Environment/BGPlants.png
+- Assets/2DGamekit/Art/Sprites/Environment/AlienBlock06.png
+- Assets/2DGamekit/Art/Materials/Environment/PlantSwayLarge.mat
+- Assets/2DGamekit/Art/Sprites/Interactables/WeaponPickup.png
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/WaterDrop.png
+- Assets/2DGamekit/Art/Sprites/Interactables/PassThroughPlatformNormal.png
+- Assets/2DGamekit/Art/Materials/Interactables/HubDoor 1.mat
+- Assets/2DGamekit/Art/Materials/Environment/PlantSwayMedium.mat
+- Assets/2DGamekit/Art/Materials/Interactables/RockDust01.mat
+- Assets/2DGamekit/Art/Sprites/Interactables/StomperDoorOff02.png
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/GrassParticle.png
+- Assets/2DGamekit/Art/Sprites/Interactables/HubDoor0.png
+- Assets/2DGamekit/Art/Sprites/Environment/AlienFlora.png
+- Assets/2DGamekit/Art/Sprites/Interactables/MovingPlatformEmissive.png
+- Assets/2DGamekit/Art/Sprites/Environment/LowerPlants3.png
+- Assets/2DGamekit/Art/Sprites/Environment/PlantMidSized.png
+- Assets/2DGamekit/Art/Sprites/Environment/Chomper02.png
+- Assets/2DGamekit/Art/Materials/Interactables/PassthroughPlatform.mat
+- Assets/2DGamekit/Art/Sprites/Interactables/TeleporterEmissive.png
+- Assets/2DGamekit/Art/Sprites/Environment/LowerPlants6.png
+- Assets/2DGamekit/Art/Materials/Interactables/InfoSign.mat
+- Assets/2DGamekit/Art/Materials/Interactables/MovingPlatformAlien.mat
+- Assets/2DGamekit/Art/Materials/Interactables/PlatformDetail.mat
+- Assets/2DGamekit/Art/Materials/Environment/PlantSwaySmall.mat
+- Assets/2DGamekit/Art/Sprites/Environment/AlienSculpture01b.png
+- Assets/2DGamekit/Art/Materials/Environment/LitBasicPlatform.mat
+- Assets/2DGamekit/Art/Sprites/Environment/AlienStatue01.png
+- Assets/2DGamekit/Art/Sprites/Environment/Clouds.png
+- Assets/2DGamekit/Art/Sprites/Interactables/Switch.png
+- Assets/2DGamekit/Art/Materials/Interactables/LitTeleporter.mat
+- Assets/2DGamekit/Art/Sprites/Environment/Stomper.png
+- Assets/2DGamekit/Art/Sprites/Environment/AlienBlock05.png
+- Assets/2DGamekit/Art/Materials/Environment/LitBasic.mat
+- Assets/2DGamekit/Art/Materials/Interactables/HubDoor.mat
+- Assets/2DGamekit/Utilities/Shaders/AnimatedTiling.shadergraph
+- Assets/2DGamekit/Art/Sprites/Environment/BGRock02.png
+- Assets/2DGamekit/Art/Materials/Interactables/Teleporter.mat
+- Assets/2DGamekit/Art/Sprites/Interactables/HubDoor1.png
+- Assets/2DGamekit/Utilities/Shaders/Particle Standard Unlit.shader
+- Assets/2DGamekit/Art/Materials/Environment/TilemapRockBG.mat
+- Assets/2DGamekit/Art/Sprites/Interactables/StomperDoorOn02.png
+- Assets/2DGamekit/Art/Materials/Interactables/MovingPlatform.mat
+- Assets/2DGamekit/Art/Sprites/Interactables/MovingPlatformNormal.png
+- Assets/2DGamekit/Art/Materials/Environment/Dropship.mat
+- Assets/2DGamekit/Utilities/Shaders/Shader_SwayingSprite.shadergraph
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/ParticleHeatHaze.png
+- Assets/2DGamekit/Art/Materials/Environment/Mist.mat
+- Assets/2DGamekit/Art/Materials/Environment/MistLight.mat
+- Assets/2DGamekit/Art/Sprites/Environment/Spiderwebs.png
+- Assets/2DGamekit/Art/Sprites/Interactables/MovingPlatformAlienNormal.png
+- Assets/2DGamekit/Art/Sprites/Interactables/PassThroughPlatform_Emissive.png
+- Assets/2DGamekit/Art/Sprites/Environment/Plants.png
+- Assets/2DGamekit/Art/Materials/Interactables/SwitchEffect.mat
+- Assets/2DGamekit/Art/Sprites/Environment/HangingPlants1.png
+- Assets/2DGamekit/Art/Materials/Interactables/PushableBox.mat
+- Assets/2DGamekit/Art/Sprites/Environment/WallTileEnd.png
+- Assets/2DGamekit/Art/Materials/Environment/LitTileBasic.mat
+- Assets/2DGamekit/Art/Sprites/Environment/AlienBlock02.png
+- Assets/2DGamekit/Art/Sprites/Interactables/PushableBoxEmissive.png
+- Assets/2DGamekit/Art/Sprites/Environment/BGRock04.png
+- Assets/2DGamekit/Art/Sprites/Interactables/PassThroughPlatformAlien.png
+- Assets/2DGamekit/Art/Sprites/Environment/LowerPlants4.png
+- Assets/2DGamekit/Art/Sprites/Interactables/PressurePad.png
+- Assets/2DGamekit/Art/Sprites/Interactables/PassThroughPlatform.png
+- Assets/2DGamekit/Art/Sprites/Environment/LowerPlants5.png
+- Assets/2DGamekit/Art/Sprites/Interactables/DestructibleWall.png
+- Assets/2DGamekit/Utilities/Shaders/Shield.shader
+- Assets/2DGamekit/Art/Sprites/Environment/AproachingWallPattern02.png
+- Assets/2DGamekit/Utilities/Shaders/FrostedGlass.shader
+- Assets/2DGamekit/Art/Sprites/Environment/LowerPlants2.png
+- Assets/2DGamekit/Art/Sprites/Interactables/Bridge.png
+- Assets/2DGamekit/Art/Sprites/Interactables/SpikesNew.png
+- Assets/2DGamekit/Art/Sprites/Environment/Chomper.png
+- Assets/2DGamekit/Art/Sprites/Interactables/InfoSignNormal.png
+- Assets/2DGamekit/Art/Sprites/Environment/AlienBlock03.png
+- Assets/2DGamekit/Art/Sprites/Environment/Stones.png
+- Assets/2DGamekit/Art/Sprites/Environment/AlienStatue03.png
+- Assets/2DGamekit/Art/Sprites/Interactables/MovingPlatform.png
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/AcidBubbles.png
+- Assets/2DGamekit/Art/Sprites/Environment/Platforms.png
+- Assets/2DGamekit/Art/Materials/Environment/Stones.mat
+- Assets/2DGamekit/Art/Sprites/Environment/DropshipNormal.png
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/ParticleSpark.png
+- Assets/2DGamekit/Art/Sprites/Environment/Stomper02.png
+- Assets/2DGamekit/Art/Sprites/Interactables/HubDoor3.png
+- Assets/2DGamekit/Art/Sprites/Interactables/PassThroughPlatformAlienNormal.png
+- Assets/2DGamekit/Art/Sprites/Environment/AlienSculpture01.png
+- Assets/2DGamekit/Art/Materials/Interactables/DoorGlow.mat
+- Assets/2DGamekit/Art/Sprites/Environment/UndergroundRoots.png
+- Assets/2DGamekit/Art/Materials/Environment/TilemapAlien.mat
+- Assets/2DGamekit/Art/Sprites/Interactables/DestructibleBox.bmp
+- Assets/2DGamekit/Art/Sprites/Environment/FloatingRocks.png
+- Assets/2DGamekit/Art/Sprites/Environment/HangingPlants2.png
+- Assets/2DGamekit/Art/Sprites/Environment/AlienSculpture03.png
+- Assets/2DGamekit/Art/Sprites/Interactables/MovingPlatformAlien.png
+- Assets/2DGamekit/Art/Materials/Environment/WallTileEnd.mat
+- Assets/2DGamekit/Art/Materials/Environment/TilemapAlienBG.mat
+- Assets/2DGamekit/Utilities/Shaders/NormalMappedTileAnimated.shader
+- Assets/2DGamekit/Art/Sprites/Environment/AlienStatue04.png
+- Assets/2DGamekit/Art/Sprites/Environment/Sky.png
+- Assets/2DGamekit/Art/Materials/Environment/LitTilemapAlien.mat
+- Assets/2DGamekit/Art/Sprites/Interactables/PushableBox.png
+- Assets/2DGamekit/Utilities/Shaders/NormalMappedSprite.shader
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/Water.png
+- Assets/2DGamekit/Art/Sprites/VFX/Environment/Mist.png
+Dependencies: []

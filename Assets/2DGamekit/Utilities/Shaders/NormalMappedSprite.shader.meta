@@ -1,13 +1,5 @@
 fileFormatVersion: 2
 guid: c435d116a610d2745b93f829ed86cccd
-timeCreated: 1500544402
-licenseType: Store
-ShaderImporter:
-  externalObjects: {}
-  defaultTextures: []
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
   productId: 107098
@@ -15,3 +7,10 @@ AssetOrigin:
   packageVersion: 3.0
   assetPath: Assets/2DGamekit/Utilities/Shaders/NormalMappedSprite.shader
   uploadId: 680389
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: backgrounds
+  assetBundleVariant: 

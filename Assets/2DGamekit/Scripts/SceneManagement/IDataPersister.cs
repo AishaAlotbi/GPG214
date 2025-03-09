@@ -39,7 +39,10 @@ namespace Gamekit2D
 
     public class Data
     {
-
+        internal object GetValue<T>()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

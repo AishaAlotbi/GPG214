@@ -1,6 +1,7 @@
 using UnityEngine;
 using Gamekit2D;
 using System.IO;
+using System.Collections.Generic;
 
 namespace AishaAlotbi
 {
@@ -9,12 +10,12 @@ namespace AishaAlotbi
         public static SaveSystem Instance { get; private set; }
         PlayerData playerData = new PlayerData();
         public string playerJsonFileName = "Player.json";
-        public string folderPath = Application.streamingAssetsPath;
+        public string folderPath;
         private string fullFilePath = string.Empty;
 
         private void Awake()
         {
-            if (Instance != null)
+            if (Instance != null && Instance != this)
             {
                 Destroy(gameObject);
             }
@@ -29,6 +30,7 @@ namespace AishaAlotbi
 
         private void Start()
         {
+            folderPath = Application.persistentDataPath;
             fullFilePath = Path.Combine(folderPath, playerJsonFileName);
         }
 
@@ -50,14 +52,18 @@ namespace AishaAlotbi
         public void SaveGame()
         {
             PlayerCharacter player = FindObjectOfType<PlayerCharacter>();
-
             Damageable damageable = FindObjectOfType<Damageable>();
-            InventoryController.InventoryChecker inventory = new InventoryController.InventoryChecker();
+            InventoryController inventoryController = FindObjectOfType<InventoryController>();
 
-            playerData.currentHealth = damageable.m_CurrentHealth;
+            Data inventoryData = inventoryController.SaveData();
+            HashSet<string> inventorySet = ((Data<HashSet<string>>)inventoryData).value;
+
+            string[] inventoryItemsArray = new string[inventorySet.Count];
+            inventorySet.CopyTo(inventoryItemsArray);
+
+            playerData.currentHealth = damageable.startingHealth;
             playerData.playerPosition = player.transform.position;
-            playerData.playerInventory = inventory.inventoryItems;
-
+            playerData.playerInventory = inventoryItemsArray;
 
 
             string jsonData = JsonUtility.ToJson(playerData);
@@ -81,12 +87,21 @@ namespace AishaAlotbi
                 {
                     PlayerCharacter player = FindObjectOfType<PlayerCharacter>();
                     Damageable damageable = FindObjectOfType<Damageable>();
-                    InventoryController.InventoryChecker inventory = new InventoryController.InventoryChecker();
+                    InventoryController inventoryController = FindObjectOfType<InventoryController>();
 
 
                     player.transform.position = playerData.playerPosition;
                     damageable.m_CurrentHealth = playerData.currentHealth;
-                    inventory.inventoryItems = playerData.playerInventory;
+
+                    inventoryController.Clear();
+
+                    foreach (string item in playerData.playerInventory)
+                    {
+                        inventoryController.AddItem(item);
+                    }
+
+                    Debug.Log("Game Loaded, Player Health = " + playerData.currentHealth + " Player Position = " + playerData.playerPosition + " Player Inventory = " + playerData.playerInventory);
+
 
                 }
                 else

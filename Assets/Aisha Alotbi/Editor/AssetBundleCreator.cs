@@ -9,7 +9,7 @@ namespace AishaAlotbi
         [MenuItem("Assets/Build AssetBundles")]
         static void BuildAssetBundles()
         {
-            string assetBundleDirectory = "Assets/AssetBundles";
+            string assetBundleDirectory = Path.Combine(Application.streamingAssetsPath, "AssetBundles");
 
             if (!Directory.Exists(assetBundleDirectory))
             {

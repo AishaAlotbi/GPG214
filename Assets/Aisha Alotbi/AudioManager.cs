@@ -1,50 +1,83 @@
 using System.Collections;
 using System.IO;
+using Gamekit2D;
 using UnityEngine;
 using UnityEngine.Networking;
+
 
 namespace AishaAlotbi
 {
 
     public class AudioManager : MonoBehaviour
     {
-        public AudioSource CharacterVoiceAudio;
-            
-        public string audioFileName = "Footsteps.ogg";
+        public string musicFileName = "newMusic.mp3";
+        public string ambientFileName = "newAmbient.mp3";
         public string streamingAssetsFolderPath = Application.streamingAssetsPath;
+        private BackgroundMusicPlayer backgroundMusicPlayer;
 
-        IEnumerator Start()
+        private void Start()
         {
-            yield return StartCoroutine(LoadAudioClip());
+            Debug.Log("AudioManager Start called");
+            backgroundMusicPlayer = BackgroundMusicPlayer.Instance;
+            LoadAndChangeMusic(musicFileName, true);
+            LoadAndChangeMusic(ambientFileName, false);
+
+
         }
 
+        
 
-        IEnumerator LoadAudioClip()
+        private void LoadAndChangeMusic(string fileName, bool isMusic)
         {
-            string audioFilePath = Path.Combine(streamingAssetsFolderPath, audioFileName);
+            string filePath = Path.Combine(streamingAssetsFolderPath,fileName);
+            Debug.Log("File Path: " + filePath);
 
+            
+            
+                StartCoroutine(LoadAudioClip(filePath, isMusic));
+           
+                //Debug.LogError("File not found at path: " + filePath);
+            
+            
+            
+        }
 
-            if (File.Exists(audioFilePath))
+        IEnumerator LoadAudioClip(string fileName, bool isMusic)
+        {
+            UnityWebRequest audioRequest = UnityWebRequestMultimedia.GetAudioClip("file://" + streamingAssetsFolderPath + "/" + fileName, AudioType.UNKNOWN);
+            AsyncOperation downloadOperation = audioRequest.SendWebRequest();
+
+            while (!downloadOperation.isDone)
             {
-                UnityWebRequest audioClipRequest = UnityWebRequestMultimedia.GetAudioClip("file://"+ audioFilePath, AudioType.UNKNOWN);
-                yield return audioClipRequest.SendWebRequest();
-
-                if(audioClipRequest.result == UnityWebRequest.Result.Success)
-                {
-                    AudioClip newClip = DownloadHandlerAudioClip.GetContent(audioClipRequest);
-
-                    CharacterVoiceAudio.clip = newClip;
-                    CharacterVoiceAudio.Play();
-                }
-                else { Debug.Log("Failed to load clip " + audioClipRequest.error); }
-               
-                audioClipRequest.Dispose();
-                
+                Debug.Log("Download Progress " + ((downloadOperation.progress / 1f) * 100) + "%");
+                yield return null;
             }
-            else { Debug.Log("File not found at path " + audioFilePath); }
-          
-            
-            
+
+            if(audioRequest.result == UnityWebRequest.Result.ConnectionError || audioRequest.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("Error when downloading file");
+                yield break;
+            }
+
+            if(audioRequest.result == UnityWebRequest.Result.Success)
+            {
+                AudioClip newClip = DownloadHandlerAudioClip.GetContent(audioRequest);
+
+                if (isMusic)
+                {
+                    backgroundMusicPlayer.ChangeMusic(newClip);
+                    
+                }
+                else
+                {
+                    backgroundMusicPlayer.ChangeAmbient(newClip);
+                }
+            }
+            else
+            {
+                Debug.LogError("Failed to load audio clip: " + audioRequest.error);
+            }
         }
+
     }
 }
