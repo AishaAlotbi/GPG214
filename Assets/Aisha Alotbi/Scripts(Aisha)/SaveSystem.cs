@@ -70,7 +70,7 @@ namespace AishaAlotbi
 
             File.WriteAllText(fullFilePath, jsonData);
 
-            Debug.Log("Game Saved, Player Health = " + playerData.currentHealth + " Player Position = " + playerData.playerPosition + " Player Inventory = " + playerData.playerInventory);
+            //Debug.Log("Game Saved, Player Health = " + playerData.currentHealth + " Player Position = " + playerData.playerPosition + " Player Inventory = " + playerData.playerInventory);
 
         }
 
@@ -100,18 +100,18 @@ namespace AishaAlotbi
                         inventoryController.AddItem(item);
                     }
 
-                    Debug.Log("Game Loaded, Player Health = " + playerData.currentHealth + " Player Position = " + playerData.playerPosition + " Player Inventory = " + playerData.playerInventory);
+                    //Debug.Log("Game Loaded, Player Health = " + playerData.currentHealth + " Player Position = " + playerData.playerPosition + " Player Inventory = " + playerData.playerInventory);
 
 
                 }
                 else
                 {
-                    Debug.LogError("No Data within JSON");
+                   // Debug.LogError("No Data within JSON");
                 }
             }
             else
             {
-                Debug.LogError("No Player Data Found");
+               // Debug.LogError("No Player Data Found");
             }
         }
     }
